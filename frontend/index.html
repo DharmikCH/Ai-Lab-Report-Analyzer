@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CBC Red Flag Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-900">
+    <main class="max-w-5xl mx-auto px-6 py-8">
+      <h1 class="text-3xl font-bold mb-2">AI Lab Report Red Flag Analyzer</h1>
+      <p class="text-slate-600 mb-6">Upload a CBC PDF and review educational red-flag interpretation.</p>
+
+      <form id="analyze-form" class="bg-white border rounded-xl p-4 space-y-4 shadow-sm">
+        <div class="grid sm:grid-cols-3 gap-3">
+          <label class="block">
+            <span class="text-sm text-slate-600">Age</span>
+            <input name="age" type="number" min="0" required class="mt-1 w-full rounded border px-3 py-2" />
+          </label>
+          <label class="block">
+            <span class="text-sm text-slate-600">Gender</span>
+            <select name="gender" class="mt-1 w-full rounded border px-3 py-2">
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="other">Other / Prefer not to say</option>
+            </select>
+          </label>
+          <label class="block">
+            <span class="text-sm text-slate-600">CBC PDF</span>
+            <input name="report" type="file" accept="application/pdf" required class="mt-1 w-full rounded border px-3 py-2" />
+          </label>
+        </div>
+
+        <label class="block">
+          <span class="text-sm text-slate-600">Medical history (optional)</span>
+          <textarea name="history" rows="3" class="mt-1 w-full rounded border px-3 py-2"></textarea>
+        </label>
+
+        <button class="px-4 py-2 rounded bg-indigo-600 text-white font-medium" type="submit">Analyze CBC</button>
+      </form>
+
+      <section id="output" class="mt-6"></section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
